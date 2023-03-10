@@ -1,7 +1,7 @@
 fn main() {
     const DAYS: [&str; 12] = [
-        "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight", "nineth",
-        "tenth", "eleventh", "twelve",
+        "first", "second", "third", "vourth", "vivth", "sixth", "seventh", "eight", "nineth",
+        "tenth", "eleventh", "twelvth",
     ];
     const ERRORS: [&str; 12] = [
         "Using Sentinel Values.",
@@ -22,10 +22,14 @@ fn main() {
     let mut song_text = String::new();
 
     for day in DAYS {
-        song_text.push_str("For the {day} day, my rust compiler gave to me:\n");
+        let formatted = format!("For the {} day, my rust compiler gave to me:\n", day);
+        song_text.push_str(&formatted);
+
         for n in (0..index).rev() {
-            song_text.push_str("{ERRORS[n]}\n");
+            let formatted = format!("{}\n", ERRORS[n]);
+            song_text.push_str(&formatted);
         }
+        
         index += 1;
     }
     println!("{song_text}");
