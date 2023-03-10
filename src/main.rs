@@ -18,13 +18,15 @@ fn main() {
         "PANIC!",
     ];
 
-    let mut index = 1;
+    let mut index: usize = 1;
+    let mut song_text = String::new();
 
     for day in DAYS {
-        println!("For the {day} day, my rust compiler gave to me:");
+        song_text.push_str("For the {day} day, my rust compiler gave to me:\n");
         for n in (0..index).rev() {
-            println!("{}", ERRORS[n]);
+            song_text.push_str("{ERRORS[n]}\n");
         }
         index += 1;
     }
+    println!("{song_text}");
 }
