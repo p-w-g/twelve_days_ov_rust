@@ -15,10 +15,16 @@ fn main() {
         "Not Leveraging Pattern Matching.",
         "Initialize After Construction.",
         "Defensive Copies.",
-        "Conclusions ",
+        "PANIC!",
     ];
+
+    let mut index = 1;
 
     for day in DAYS {
         println!("For the {day} day, my rust compiler gave to me:");
+        for n in (0..index).rev() {
+            println!("{}", ERRORS[n]);
+        }
+        index += 1;
     }
 }
